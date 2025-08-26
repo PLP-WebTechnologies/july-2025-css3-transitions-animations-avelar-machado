@@ -1,0 +1,83 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: #f0f8ff;
+}
+
+/* ===========================
+   🎨 Part 1: CSS Animations
+   =========================== */
+
+/* Button Hover Transition */
+#hoverButton {
+  padding: 12px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+#hoverButton:hover {
+  background: #45a049;
+  transform: scale(1.1);
+}
+
+/* Continuous Animation with @keyframes */
+.animated-box {
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  background: crimson;
+  border-radius: 10px;
+  animation: bounce 2s infinite alternate;
+}
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50px); }
+}
+
+/* ===========================
+   🎨 Part 3: CSS + JS Combo
+   =========================== */
+
+/* Box to Animate */
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  background: steelblue;
+  transition: transform 0.5s ease, background 0.5s ease;
+}
+.box.active {
+  transform: rotate(180deg) scale(1.2);
+  background: tomato;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  animation: fadeOut 0.5s forwards;
+}
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  transform: translateY(-100px);
+  animation: slideIn 0.5s forwards;
+}
+@keyframes slideIn {
+  from { transform: translateY(-100px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
